@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="value_selector_maring_top">14dp</dimen>
+    <dimen name="value_selector_text">30dp</dimen>
+    <dimen name="value_selector_text_label">14dp</dimen>
+    <dimen name="value_selector_button_hMargin">25dp</dimen>
+    <dimen name="value_selector_button_insideMargin">18dp</dimen>
+</resources>

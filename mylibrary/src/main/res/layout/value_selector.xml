@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/value_selector_edit_text"
+        android:layout_marginTop="@dimen/value_selector_maring_top"
+        android:text="0"
+        android:enabled="false"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:background="@null"
+        android:textSize="@dimen/value_selector_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/value_selector_label"
+        android:layout_below="@+id/value_selector_edit_text"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/value_selector_text_label"
+        android:text="@string/value_selector_value_label"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/value_selector_minus_button_state"
+        android:id="@+id/value_selector_minus_button"
+        android:layout_marginTop="@dimen/value_selector_button_hMargin"
+        android:layout_marginBottom="@dimen/value_selector_button_hMargin"
+        android:layout_marginRight="@dimen/value_selector_button_insideMargin"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/value_selector_label"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/value_selector_button_hMargin"
+        android:layout_marginBottom="@dimen/value_selector_button_hMargin"
+        android:layout_marginLeft="@dimen/value_selector_button_insideMargin"
+        android:clickable="true"
+        android:layout_alignLeft="@+id/value_selector_label"
+        android:src="@drawable/value_selector_plus_button_state"
+        android:id="@+id/value_selector_plus_button"/>
+
+</RelativeLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Library Custom View</string>
+    <string name="value_selector_value_label">VALUE</string>
+    <string name="value_bar_value_label">CURRENT VALUE</string>
+</resources>
