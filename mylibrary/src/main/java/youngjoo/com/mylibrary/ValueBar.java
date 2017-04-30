@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
@@ -159,7 +160,28 @@ public class ValueBar extends View {
     }
 
     private void drawBar(Canvas canvas){
+        String maxValue = String.valueOf(mMaxValue);
+        Rect bounds = new Rect();
+        mMaxValuePaint.getTextBounds(maxValue, 0, maxValue.length(), bounds);
+        float barLength = getWidth() - getPaddingRight() - getPaddingLeft() - mCircleRadius - bounds.width() - mSpaceAfterBar;
 
+        float barCenter = getBarCenter();
+        float halfBarHeight = mBarHeight /2;
+        float top = barCenter - halfBarHeight;
+        float bottom = barCenter + halfBarHeight;
+        float left = getPaddingLeft();
+        float right = getPaddingLeft() + barLength;
+
+        RectF rectF = new RectF(left, top, right, bottom);
+        canvas.drawRoundRect(rectF, halfBarHeight, halfBarHeight, mBarBasePaint);
+
+        float percentFilled = (float) mCurrentValue / (float) mMaxValue;
+        float fillLength = barLength * percentFilled;
+        float fillPosition = left + fillLength;
+        RectF fillRect = new RectF(left, top, fillPosition, bottom);
+        canvas.drawRoundRect(fillRect, halfBarHeight, halfBarHeight, mBarFillPaint);
+
+        canvas.drawCircle(fillPosition, barCenter, mCircleRadius, mCirclePaint);
     }
 
     @Override
